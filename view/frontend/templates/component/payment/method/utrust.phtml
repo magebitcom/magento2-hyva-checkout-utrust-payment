@@ -1,0 +1,27 @@
+<?php
+/**
+ * @copyright Copyright (c) 2024 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ */
+
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Magebit\CheckoutUtrustPayment\Model\Payment\Utrust;
+
+/** @var Template $block */
+/** @var Utrust $method */
+/** @var Escaper $escaper */
+
+$method = $block->getMethod();
+?>
+<?php /* The wire Payment Method directive is required to sit in the root DOM element. */ ?>
+<div>
+    <?php if (! empty($method->getInstructions())): ?>
+        <p class="p-4 bg-gray-100 rounded-lg">
+            <?= /* @noEscape */ nl2br($escaper->escapeHtml($method->getInstructions())) ?>
+        </p>
+    <?php endif ?>
+</div>
