@@ -5,7 +5,7 @@
 1. Install [https://github.com/utrustdev/utrust-for-magento2](Utrust_Payment)
 2. Add Repository to Composer by running
 ```bash
-
+composer config repositories.magebitcom composer https://composer.magebit.com/
 ```
 3. Install Compatability Module by running
 ```bash
